@@ -1,0 +1,22 @@
+{
+  "name": "apollo-codegen-error",
+  "version": "1.0.0",
+  "description": "demonstrates an error in apollo-tooling",
+  "main": "index.js",
+  "scripts": {
+    "clean": "find src -name '__generated__' -exec rm -rf '{}' +",
+    "codegen": "cd src && apollo client:codegen --localSchemaFile ../schema.gql --target typescript --includes 'macro/**/*.ts' --tagName 'gql'",
+    "test": "npm run clean && npm run codegen && tsc && node dist/index"
+  },
+  "keywords": [
+    "test",
+    "showcase"
+  ],
+  "author": "Eva.Rosalene",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^12.7.3",
+    "apollo": "^2.18.0",
+    "typescript": "^3.6.2"
+  }
+}
